@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Nav from "./pages/Nav";
+import AverageCasualties from "./pages/AverageCasualties";
 
 
 export default function PagesRouter() {
@@ -12,6 +13,7 @@ export default function PagesRouter() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/average-casualties" element={<AverageCasualties />} />
         </Routes>
       </div>
     </div>
