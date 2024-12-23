@@ -2,14 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchIncidentTrendsByYears, fetchIncidentTrendsByYearAndMonth } from "../../services/yearsService";
 import Filter from "./Filter";
 import Chart from "./Chart";
-
-interface FilterOption {
-  type: "range" | "specific" | "last5" | "last10";
-  year?: number;
-  fromYear?: number;
-  toYear?: number;
-  month?: number;
-}
+import { FilterOption } from "../../types/yearsFilter";
 
 export default function YearsGraph() {
   const [data, setData] = useState<any[]>([]);
