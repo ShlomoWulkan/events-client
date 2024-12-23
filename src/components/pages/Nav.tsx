@@ -14,6 +14,7 @@ export default function Nav() {
   const location = useLocation();
   const navigation = [
     { name: 'Home', href: '/pages/home' },
+    { name: 'Attack Types', href: '/pages/attack-types' },
     { name: 'Average Casualties', href: '/pages/average-casualties' },
   ];
 

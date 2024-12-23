@@ -1,5 +1,5 @@
 export interface CountryData {
-  _id: string;
+  countryName: string;
   avg: number;
   longitude: number;
   latitude: number;

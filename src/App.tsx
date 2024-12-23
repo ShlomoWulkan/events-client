@@ -5,7 +5,7 @@ import PagesRouter from "./components/PagesRouter";
 function App() {
 
   return (
-    <div className="app">
+    <div className="app bg-gray-100">
       <Routes>
         <Route path="/" element={<PagesRouter />} />
         <Route path="pages/*" element={<PagesRouter />} />

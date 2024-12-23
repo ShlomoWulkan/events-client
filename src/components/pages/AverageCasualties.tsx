@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchCountryData, fetchCountryById } from "../../services/countryService";
 import { CountryData } from "../../types/country";
-import { MapContainer, TileLayer, Marker, Popup, useMap,  } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import SearchCountry from "./SearchCountry";
 
@@ -29,7 +29,7 @@ const CountryCasualties = () => {
       return;
     }
 
-    const country = countries.find((country) => country._id.toLowerCase() === searchTerm.toLowerCase());
+    const country = countries.find((country) => country.countryName.toLowerCase() === searchTerm.toLowerCase());
 
     if (country) {
       setSelectedCountry(country);
@@ -53,7 +53,7 @@ const CountryCasualties = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-100 p-14">
+    <div className="flex flex-col items-center min-h-screen bg-gray-100">
       <SearchCountry 
         searchTerm={searchTerm} 
         setSearchTerm={setSearchTerm} 
@@ -83,18 +83,18 @@ const CountryCasualties = () => {
 
           {/* אם נבחרה מדינה אז מציגים אותה בלבד, אחרת מציגים את כל המדינות */}
           {selectedCountry && selectedCountry.latitude && selectedCountry.longitude ? (
-            <Marker key={selectedCountry._id} position={[selectedCountry.latitude, selectedCountry.longitude]}>
+            <Marker key={selectedCountry.countryName} position={[selectedCountry.latitude, selectedCountry.longitude]}>
               <Popup>
-                <strong>{selectedCountry._id}</strong><br />
+                <strong>{selectedCountry.countryName}</strong><br />
                 Average Casualties: {selectedCountry.avg}
               </Popup>
             </Marker>
           ) : (
             countries.map((country) =>
               country.latitude && country.longitude ? (
-                <Marker key={country._id} position={[country.latitude, country.longitude]}>
+                <Marker key={country.countryName} position={[country.latitude, country.longitude]}>
                   <Popup>
-                    <strong>{country._id}</strong><br />
+                    <strong>{country.countryName}</strong><br />
                     Average Casualties: {country.avg}
                   </Popup>
                 </Marker>

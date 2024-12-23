@@ -14,15 +14,17 @@ const SearchCountry: React.FC<SearchCountryProps> = ({ searchTerm, setSearchTerm
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search by country ID"
+        placeholder="Search by country name"
         className="p-2 border rounded"
       />
-      <button onClick={handleSearch} className="mt-2 p-2 bg-blue-500 text-black rounded">
-        Search
-      </button>
-      <button onClick={handleClearSearch} className="mt-2 p-2 bg-gray-300 text-black rounded">
+      <div className="flex justify-center w-full h-full">
+      <button onClick={handleClearSearch} className="mt-2 m-2 p-2 bg-gray-300 text-black rounded">
         Clear
       </button>
+      <button onClick={handleSearch} className="mt-2 m-2 p-2 bg-blue-500 text-black rounded">
+        Search
+      </button>
+      </div>
     </div>
   );
 };
