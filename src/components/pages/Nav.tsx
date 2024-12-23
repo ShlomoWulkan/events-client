@@ -16,6 +16,7 @@ export default function Nav() {
     { name: 'Home', href: '/pages/home' },
     { name: 'Attack Types', href: '/pages/attack-types' },
     { name: 'Average Casualties', href: '/pages/average-casualties' },
+    { name: 'Years Incidents', href: '/pages/years-incidents' },
   ];
 
   return (

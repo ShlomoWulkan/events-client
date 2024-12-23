@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Nav from "./pages/Nav";
 import AverageCasualties from "./pages/AverageCasualties";
 import AttackTypes from "./pages/AttackTypes";
+import YearsGraph from "./pages/YearsGraph";
 
 
 export default function PagesRouter() {
@@ -16,6 +17,7 @@ export default function PagesRouter() {
           <Route path="/home" element={<Home />} />
           <Route path="/attack-types" element={<AttackTypes />} />
           <Route path="/average-casualties" element={<AverageCasualties />} />
+          <Route path="/years-incidents" element={<YearsGraph />} />
         </Routes>
       </div>
     </div>
