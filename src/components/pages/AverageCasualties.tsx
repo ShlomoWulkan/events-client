@@ -21,11 +21,10 @@ const CountryCasualties = () => {
     loadCountries();
   }, []);
 
-  // פונקציה לחיפוש מדינה
   const handleSearch = async () => {
     if (!searchTerm.trim()) {
-      setErrorMessage(""); // אם לא הוזן חיפוש, מנקים את הודעת השגיאה
-      setSelectedCountry(null); // מציגים את כל המדינות
+      setErrorMessage(""); 
+      setSelectedCountry(null); 
       return;
     }
 
@@ -33,12 +32,12 @@ const CountryCasualties = () => {
 
     if (country) {
       setSelectedCountry(country);
-      setErrorMessage(""); // מנקים את הודעת השגיאה אם נמצא
+      setErrorMessage(""); 
     } else {
       const countryFromApi = await fetchCountryById(searchTerm);
       if (countryFromApi) {
         setSelectedCountry(countryFromApi);
-        setErrorMessage(""); // מנקים את הודעת השגיאה אם מצאנו ב-API
+        setErrorMessage(""); 
       } else {
         setSelectedCountry(null);
         setErrorMessage("Country not found.");
@@ -47,9 +46,9 @@ const CountryCasualties = () => {
   };
 
   const handleClearSearch = () => {
-    setSearchTerm(""); // ניקוי שדה החיפוש
-    setSelectedCountry(null); // מנקים את המדינה שנבחרה
-    setErrorMessage(""); // מנקים את הודעת השגיאה
+    setSearchTerm(""); 
+    setSelectedCountry(null); 
+    setErrorMessage(""); 
   };
 
   return (
@@ -61,7 +60,6 @@ const CountryCasualties = () => {
         handleClearSearch={handleClearSearch}
       />
 
-      {/* הצגת הודעת שגיאה אם לא נמצאה מדינה */}
       {errorMessage && <div className="text-red-500 mt-2">{errorMessage}</div>}
 
       <div className="w-[70vw] h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[60vh] xl:h-[70vh] max-w-6xl border border-gray-300 rounded-lg shadow-lg">
@@ -81,7 +79,6 @@ const CountryCasualties = () => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
 
-          {/* אם נבחרה מדינה אז מציגים אותה בלבד, אחרת מציגים את כל המדינות */}
           {selectedCountry && selectedCountry.latitude && selectedCountry.longitude ? (
             <Marker key={selectedCountry.countryName} position={[selectedCountry.latitude, selectedCountry.longitude]}>
               <Popup>

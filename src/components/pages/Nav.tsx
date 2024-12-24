@@ -17,6 +17,9 @@ export default function Nav() {
     { name: 'Attack Types', href: '/pages/attack-types' },
     { name: 'Average Casualties', href: '/pages/average-casualties' },
     { name: 'Years Incidents', href: '/pages/years-incidents' },
+    { name: 'Gang per country', href: '/pages/gang-country' },
+    { name: 'Ganges by year', href: '/pages/ganges-by-year' },
+    { name: 'Deadliest Gang Country', href: '/pages/deadliest-gang-country' },
   ];
 
   return (
