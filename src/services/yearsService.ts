@@ -1,13 +1,15 @@
 import axios from "axios";
 import { IncidentTrendData } from "../types/yearsType";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export const fetchIncidentTrendsByYears = async (
   fromYear: number,
   toYear: number
 ): Promise<IncidentTrendData[] | undefined> => {
   try {
     const response = await axios.get<{ data: IncidentTrendData[] }>(
-      `http://localhost:3000/api/analysis/incident-trends?from=${fromYear}&to=${toYear}`
+      `${apiUrl}/analysis/incident-trends?from=${fromYear}&to=${toYear}`
     );
     return response.data.data;
   } catch (error) {
@@ -21,8 +23,8 @@ export const fetchIncidentTrendsByYearAndMonth = async (
 ): Promise<IncidentTrendData[] | undefined> => {
   try {
     const url = month
-      ? `http://localhost:3000/api/analysis/incident-trends?year=${year}&month=${month}`
-      : `http://localhost:3000/api/analysis/incident-trends?year=${year}`;
+      ? `${apiUrl}/analysis/incident-trends?year=${year}&month=${month}`
+      : `${apiUrl}/analysis/incident-trends?year=${year}`;
 
     const response = await axios.get<{ data: IncidentTrendData[] }>(url);
     return response.data.data;

@@ -24,8 +24,7 @@ const GangCountry = () => {
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCountry(e.target.value);
   };
-
-  const handleMarkerClick = (country: string, lat: number, lng: number) => {
+  const handleMarkerClick = (country: string, _lat: number, _lng: number) => {
     setSelectedCountry(country);
   };
 

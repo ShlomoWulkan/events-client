@@ -1,14 +1,16 @@
 import axios from "axios";
 import { GangCountryData } from "../types/gangCountryType";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export const fetchGangCountryData = async (
     country: string,
     top?: number
 ): Promise<GangCountryData[] | undefined> => {
     try {
         const url = top 
-        ? `http://localhost:3000/api/analysis/highest-casualty-regions/${country}?top=${top}` 
-        : `http://localhost:3000/api/analysis/highest-casualty-regions/${country}`;
+        ? `${apiUrl}/analysis/highest-casualty-regions/${country}?top=${top}` 
+        : `${apiUrl}/analysis/highest-casualty-regions/${country}`;
         const response = await axios.get<{ data: GangCountryData[] }>(url);
         return response.data.data;
     } catch (error) {
