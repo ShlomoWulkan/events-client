@@ -20,6 +20,7 @@ export default function Nav() {
     { name: 'Gang per country', href: '/pages/gang-country' },
     { name: 'Ganges by year', href: '/pages/ganges-by-year' },
     { name: 'Deadliest Gang Country', href: '/pages/deadliest-gang-country' },
+    { name: 'Events Menegment', href: '/pages/events-menegment' },
   ];
 
   return (

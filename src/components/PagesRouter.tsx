@@ -7,6 +7,7 @@ import YearsGraph from "./pages/YearsGraph";
 import GangCountry from "./pages/GangCountry";
 import GangesByYear from "./pages/GangesByYear";
 import DeadliestGangCountry from "./pages/DeadliestGangCountry";
+import EventsMenegment from "./pages/EventsMenegment";
 
 
 export default function PagesRouter() {
@@ -24,6 +25,7 @@ export default function PagesRouter() {
           <Route path="/gang-country" element={<GangCountry />} />
           <Route path="/ganges-by-year" element={<GangesByYear />} />
           <Route path="/deadliest-gang-country" element={<DeadliestGangCountry />} />
+          <Route path="/events-menegment" element={<EventsMenegment />} />
         </Routes>
       </div>
     </div>
